@@ -1,8 +1,8 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 const questions = [
-  inquirer.prompt([
     {
       // Title
       type: 'input',
@@ -43,7 +43,7 @@ const questions = [
       // License
       type: 'list',
       message: 'Select your license:',
-      choices: ["Apache 2.0","MIT","GNU GPLv3", "MIT", "None"],
+      choices: ["Apache 2.0","MIT","GNU GPLv3", "The Perl License", "None"],
       name: 'license',
     },
     {
@@ -58,21 +58,23 @@ const questions = [
       message: 'Enter email address:',
       name: "email",
     },
-  ])
-]  
-  .then((data) =>
-   
- 
-  fs.writeFile ('text.txt', JSON.stringify(data), (err) => {
-      err ? console.log(err) : console.log('Success!')
-  }
-));
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+  ] 
 
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, (err) => {
+//         if (err) {
+//           return console.log(err);
+//         }
+//         console.log("Success! Your README.md file has been generated")
+//     });
+// }
+function init() {
+    inquirer.prompt(questions)
+    .then ((data) => {
+        const response = generateMarkdown(data.questions);
+        writeToFile("Generated_README.md",response);
+        console.log("a README.md has been created successfully!!");
+    })
+}
 
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
 init();
