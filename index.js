@@ -43,7 +43,7 @@ const questions = [
       // License
       type: 'list',
       message: 'Select your license:',
-      choices: ["Apache 2.0","MIT","GNU GPLv3"],
+      choices: ["Apache 2.0","MIT","GNU GPLv3", "MIT", "None"],
       name: 'license',
     },
     {
@@ -67,3 +67,12 @@ const questions = [
       err ? console.log(err) : console.log('Success!')
   }
 ));
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
