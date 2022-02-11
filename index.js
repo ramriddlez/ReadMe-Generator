@@ -24,27 +24,27 @@ inquirer
     {
       // Usage
       type: 'input',
-      message: 'Provide instructions and examples for use, if you want to add a screen shot, hit enter and selct from prompt below:',
+      message: 'Provide instructions and examples for use',
       name: 'usage',
     },
+    {
+        // Contribution 
+        type: 'input',
+        message: 'Add your contribution guidelines:',
+        name: "contribution",
+    },
+    {
+        // Tests 
+        type: 'input',
+        message: 'Add your test instructions:',
+        name: "test",
+      },
     {
       // License
       type: 'list',
       message: 'Select your license:',
       choices: ["Apache 2.0","MIT","GNU GPLv3"],
       name: 'license',
-    },
-    {
-      // Contribution 
-      type: 'input',
-      message: 'Add your contribution guidelines:',
-      name: "contribution",
-    },
-    {
-      // Tests 
-      type: 'input',
-      message: 'Add your test instructions:',
-      name: "test",
     },
     {
       // Asks for github profile 
