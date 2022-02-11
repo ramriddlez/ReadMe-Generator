@@ -1,8 +1,8 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-inquirer
-  .prompt([
+const questions = [
+  inquirer.prompt([
     {
       // Title
       type: 'input',
@@ -59,6 +59,7 @@ inquirer
       name: "email",
     },
   ])
+]  
   .then((data) =>
    
  
