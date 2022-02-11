@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
   } else if (license === "None") {
     return ""
   }
-
+}
 
   
 // TODO: Create a function that returns the license section of README
@@ -93,12 +93,55 @@ function renderLicenseSection(license) {
     return ""
   }
 }
-// TODO: Create a function to generate markdown for README
+// TODO: Create a function to generate markdown for README 
 function generateMarkdown(data) {
-  return `# ${data.title} ## ${data.description}
+  //const license = data.license;
+  let licenseBadge = renderLicenseBadge(data.license);
+  let licenselink = renderLicenseLink(license);
+  let licensesection = renderLicenseSection(license);
+  
+  return `# ${data.title} ${licenseBadge}${licenselink}
 
+## Table of Contents
+
+* [Description](#desc) <br>
+* [Installation](#install) <br>
+* [Usage](#usage) <br>
+* [Contributing](#contributing) <br>
+* [Tests](#tests) <br>
+* [License](#license) <br>
+* [Questions](#questions) <br>
+
+<a name="desc"></a>
+## Description
+${data.description}
+
+<a name="install"></a>
+## Installation
+${data.instructions}
+
+<a name="usage"></a>
+## Usage
+${data.usage}
+
+<a name="contributing"></a>
+## Contributing 
+${data.guidlines}
+
+<a name="tests"></a>
+## Tests
+${data.test}
+
+<a name="license"></a>
+## License
+${licensesection}
+
+<a name="questions"></a>
+## Questions
+
+GitHub Profile: https://github.com/${data.username}
+Have any questions? Email me here => ${data.email}
 `;
 }
 
 module.exports = generateMarkdown;
-}

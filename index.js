@@ -60,14 +60,15 @@ const questions = [
     },
   ] 
 
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, (err) => {
-//         if (err) {
-//           return console.log(err);
-//         }
-//         console.log("Success! Your README.md file has been generated")
-//     });
-// }
+    function writeToFile(generateMarkdown, data) {
+        fs.writeFile(generateMarkdown, data, (err) => {
+            if (err) {
+             return console.log(err);
+        }
+        console.log("Success! Your README.md file has been generated")
+    });
+}
+
 function init() {
     inquirer.prompt(questions)
     .then ((data) => {
