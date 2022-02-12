@@ -1,7 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateMarkdown = require('./utils/generateMarkdown.js')
-const emailValidator = require('email-validator');
+// const emailValidator = require('email-validator');
 
 const questions = [
   {
@@ -58,8 +58,14 @@ const questions = [
     type: 'input',
     message: 'Enter email address:',
     name: "email",
-    validate: emailValidator
-    
+    validate: function (name) {
+      let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(name)
+      if (valid) {
+        return true
+      } else {
+        return 'Please enter a proper email.'
+      }
+    }
   },
 ]
 
