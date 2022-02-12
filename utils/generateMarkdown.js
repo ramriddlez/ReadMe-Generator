@@ -7,7 +7,7 @@ function renderLicenseBadge(license) {
     return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
   } else if (license === "The Perl License"){
     return `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
-  }else if (license === "GNU GPLv3") {
+  }else if (license === "GNU GPLv3"){
     return `![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg` 
   } else if (license === "None") {
     return " "
