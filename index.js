@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateMarkdown = require('./utils/generateMarkdown.js')
+const emailValidator = require('email-validator');
 
 const questions = [
   {
@@ -57,7 +58,7 @@ const questions = [
     type: 'input',
     message: 'Enter email address:',
     name: "email",
-
+    validate: emailValidator
     
   },
 ]
@@ -78,7 +79,6 @@ function writeToFile(generateMarkdown, data) {
 function init() {
   inquirer.prompt(questions)
     .then((data) => {
-     
       const response = generateMarkdown(data);
       const filename = `${data.title}_README.md`;
       writeToFile(filename, response)
