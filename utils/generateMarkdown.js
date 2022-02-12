@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
   }else if (license === "GNU GPLv3") {
     return `![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg` 
   } else if (license === "None") {
-    return ""
+    return " "
   }
 }
 
@@ -141,8 +141,8 @@ ${licenselink}
 
 ## Questions
 
-GitHub Profile: https://github.com/ramriddlez <br><br>
-Have any questions? Direct Message me on GitHub!
+GitHub Profile: https://github.com/${data.github} <br><br>
+Have any questions? Email me @ ${data.email}!
 `
 }
 

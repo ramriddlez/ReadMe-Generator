@@ -57,8 +57,12 @@ const questions = [
     type: 'input',
     message: 'Enter email address:',
     name: "email",
+
+    
   },
 ]
+
+
 
 //write function on writing to the generateMardown file
 function writeToFile(generateMarkdown, data) {
@@ -74,6 +78,7 @@ function writeToFile(generateMarkdown, data) {
 function init() {
   inquirer.prompt(questions)
     .then((data) => {
+     
       const response = generateMarkdown(data);
       const filename = `${data.title}_README.md`;
       writeToFile(filename, response)
