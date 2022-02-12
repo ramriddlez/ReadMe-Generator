@@ -65,18 +65,16 @@ function writeToFile(generateMarkdown, data) {
     if (err) {
       return console.log(err);
     }
-    console.log("Success! Your README.md file has been generated")
+    console.log("Success!")
   });
 }
 
 function init() {
   inquirer.prompt(questions)
     .then((data) => {
-      console.log(data)
       const response = generateMarkdown(data);
-      
-      writeToFile("Generated_README.md", response);
-      console.log("a README.md has been created successfully!!");
+      const filename = `${data.title}_README.md`;
+      writeToFile(filename, response)
     })
 }
 
