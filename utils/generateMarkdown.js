@@ -125,7 +125,7 @@ ${data.install}
 ${data.usage}
 
 
-## Contributing 
+## Contribution Guidelines
 ${data.contribution}
 
 
