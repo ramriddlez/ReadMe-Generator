@@ -2,13 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "Apache 2.0") {
-    return `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
+    return `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
   } else if (license === "MIT"){
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
   } else if (license === "The Perl License"){
-    return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`
+    return `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`
   }else if (license === "GNU GPLv3") {
-    return `[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg` 
+    return `![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg` 
   } else if (license === "None") {
     return ""
   }
@@ -100,7 +100,7 @@ function generateMarkdown(data) {
   let licenselink = renderLicenseLink(data.license);
   let licensesection = renderLicenseSection(data.license);
   
-  return `# ${data.title} ${licenseBadge}${licenselink}
+  return `# ${data.title} ${licenseBadge}
 
 ## Table of Contents
 
@@ -118,7 +118,7 @@ ${data.description}
 
 <a name="install"></a>
 ## Installation
-${data.instructions}
+${data.install}
 
 <a name="usage"></a>
 ## Usage
@@ -126,7 +126,7 @@ ${data.usage}
 
 <a name="contributing"></a>
 ## Contributing 
-${data.guidlines}
+${data.contribution}
 
 <a name="tests"></a>
 ## Tests
@@ -134,14 +134,14 @@ ${data.test}
 
 <a name="license"></a>
 ## License
-${licensesection}
+${data.license}
 
 <a name="questions"></a>
 ## Questions
 
-GitHub Profile: https://github.com/${data.username}
-Have any questions? Email me here => ${data.email}
-`;
+GitHub Profile: https://github.com/ramriddlez
+Have any questions? Direct Message me on GitHub!
+`
 }
 
 module.exports = generateMarkdown;
