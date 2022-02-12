@@ -112,31 +112,33 @@ function generateMarkdown(data) {
 * [License](#license) <br>
 * [Questions](#questions) <br>
 
-<a name="desc"></a>
+
 ## Description
 ${data.description}
 
-<a name="install"></a>
+
 ## Installation
 ${data.install}
 
-<a name="usage"></a>
+
 ## Usage
 ${data.usage}
 
-<a name="contributing"></a>
+
 ## Contributing 
 ${data.contribution}
 
-<a name="tests"></a>
+
 ## Tests
 ${data.test}
 
-<a name="license"></a>
-## License
-${data.license}
 
-<a name="questions"></a>
+## License
+${data.license} <br><br>
+${licensesection}<br><br>
+${licenselink}
+
+
 ## Questions
 
 GitHub Profile: https://github.com/ramriddlez
