@@ -60,6 +60,7 @@ const questions = [
   },
 ]
 
+//write function on writing to the generateMardown file
 function writeToFile(generateMarkdown, data) {
   fs.writeFile(generateMarkdown, data, (err) => {
     if (err) {
@@ -69,6 +70,7 @@ function writeToFile(generateMarkdown, data) {
   });
 }
 
+//initialize the entire document -- ask questions, init writeToFile function then use generatemarkdown data to write a new file 
 function init() {
   inquirer.prompt(questions)
     .then((data) => {

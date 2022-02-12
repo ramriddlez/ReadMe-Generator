@@ -6,7 +6,7 @@ function renderLicenseBadge(license) {
   } else if (license === "MIT"){
     return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
   } else if (license === "The Perl License"){
-    return `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`
+    return `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
   }else if (license === "GNU GPLv3") {
     return `![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg` 
   } else if (license === "None") {
@@ -19,7 +19,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === "Apache 2.0") {
-    return`Copyright [2022] [name of copyright owner]
+    return`Copyright [2022] [Ramriddlez]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -141,7 +141,7 @@ ${licenselink}
 
 ## Questions
 
-GitHub Profile: https://github.com/ramriddlez
+GitHub Profile: https://github.com/ramriddlez <br><br>
 Have any questions? Direct Message me on GitHub!
 `
 }
